@@ -1,0 +1,47 @@
+.wp-cli-console {
+	background: #f1f1f1;
+	z-index: 9999;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+.wp-cli-console input {
+	width: 100%;
+	border-color: transparent;
+}
+
+.wp-cli-console input:focus {
+	border-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.wp-cli-console-title {
+	background: #f2f2f2;
+	padding: .2em .5em;
+	font-weight: bold;
+	box-shadow: 0px 0px 2px 1px #afafaf;
+}
+
+.wp-cli-console-output {
+	min-height: 50px;
+	max-height: 100px;
+	overflow: auto;
+}
+
+.wp-cli-console-output pre{
+	margin: 0 auto;
+}
+
+.wp-cli-input-spinner {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 27px;
+    display: none;
+}
+
+.wp-cmd-exicuting .wp-cli-input-spinner {
+    display: block;
+}
