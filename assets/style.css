@@ -3,15 +3,21 @@
 	z-index: 9999;
 	position: fixed;
 	bottom: 0;
-	width: 100%;
+	width: calc(100% - 160px);
+	margin-left: 160px;
 }
 
-.wp-cli-console input {
+.folded .wp-cli-console {
+	margin-left:36px;
+	width: calc(100% - 36px);
+}
+
+.wp-cli-console .wp-cli-cmd-input {
 	width: 100%;
 	border-color: transparent;
 }
 
-.wp-cli-console input:focus {
+.wp-cli-console .wp-cli-cmd-input:focus {
 	border-color: transparent;
     -webkit-box-shadow: none;
     box-shadow: none;
