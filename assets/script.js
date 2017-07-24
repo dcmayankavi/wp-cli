@@ -46,6 +46,7 @@
 							}
 							wrapper.removeClass('wp-cmd-exicuting');
 							input_field.removeAttr("disabled");
+							input_field.focus();
 						},
 						error: function (responseData, textStatus, errorThrown) {
 							console.log(responseData);
@@ -62,5 +63,15 @@
 			cmdTravel++;
 			input_field.val( cmdStack[cmdTravel] );
 		}
-	} ); 
+	} );
+
+	$(document).on( 'click', '#wp-admin-bar-wp_cli_link', function(e){
+		e.preventDefault();
+		$('.wp-cli-console').fadeIn(100);
+		$('.wp-cli-console').find('.wp-cli-cmd-input').focus();
+	});
+
+	$(document).on( 'click', '.wp-cli-console-close', function(e){
+		$(this).closest('.wp-cli-console').fadeOut(100);
+	});
 })(jQuery);

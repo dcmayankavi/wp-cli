@@ -53,6 +53,9 @@ function get_cmd_result_callback() {
 		'result'	=> '',
 	);
 	$cmd = $_POST['cmd'];
+	if( 0 == strpos( $cmd, 'wp ' ) ) {
+		$cmd = str_replace('wp', 'php wp-cli.phar', $cmd);
+	}
 	$output = shell_exec( $cmd );
 	
 	if( ! empty($output ) ) {
@@ -63,3 +66,30 @@ function get_cmd_result_callback() {
 	wp_send_json( $response );
 }
 add_action( 'wp_ajax_get_cmd_result', 'get_cmd_result_callback' );
+
+/**
+ * Add WP CLI button
+ */
+function wp_cli_admin_link() {
+	global $wp_admin_bar;
+
+	if ( !is_super_admin() || !is_admin_bar_showing() ) {
+		return;
+	}
+
+	/* Add the main siteadmin menu item */
+	$wp_admin_bar->add_menu( array( 'id' => 'wp_cli_link', 'title' => __( 'WP CLI', 'wp-cli' ), 'href' => '#' ) );
+}
+add_action( 'admin_bar_menu', 'wp_cli_admin_link', 1000 );
+
+/**
+ * Add WP CLI file
+ */
+function wp_cli_activation(){
+	$destination = shell_exec('cd');
+	$source      = str_replace( "/", "\\", WP_CLI_DIR) .'wp-cli.phar';
+
+	$cmd = 'copy ' . $source .' '.$destination;
+	shell_exec($cmd);
+}
+register_activation_hook( __FILE__, 'wp_cli_activation' );
