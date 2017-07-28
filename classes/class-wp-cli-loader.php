@@ -74,6 +74,12 @@ if ( ! class_exists( 'WP_CLI_Loader' ) ) :
 			}
 		}
 
+		/**
+		 * Notice for disabled shell_exec function.
+		 *
+		 * @since 1.0.0
+		 * @return void
+		 */
 		function shell_exec_disabled() {
 			?>
 			<div class="notice notice-error">
@@ -84,6 +90,9 @@ if ( ! class_exists( 'WP_CLI_Loader' ) ) :
 
 		/**
 		 * WP CLI Scripts
+		 *
+		 * @since 1.0.0
+		 * @return void
 		 */
 		function wp_cli_scripts() {
 			wp_enqueue_style( 'wp-cli-style', WP_CLI_URL . 'assets/style.css' );
@@ -92,6 +101,9 @@ if ( ! class_exists( 'WP_CLI_Loader' ) ) :
 
 		/**
 		 * WP CLI Console Markup
+		 *
+		 * @since 1.0.0
+		 * @return void
 		 */
 		function wp_cli_console_markup() {
 			require_once WP_CLI_DIR . 'template/wp-cli-console.php';
@@ -99,6 +111,9 @@ if ( ! class_exists( 'WP_CLI_Loader' ) ) :
 
 		/**
 		 * Ajax callback
+		 *
+		 * @since 1.0.0
+		 * @return void
 		 */
 		function get_wp_cli_result_callback() {
 			if ( ! current_user_can( 'manage_options' ) ) {
@@ -110,8 +125,8 @@ if ( ! class_exists( 'WP_CLI_Loader' ) ) :
 				'result'	=> '',
 			);
 			$cmd = $_POST['cmd'];
-			if( 0 == strpos( $cmd, 'wp ' ) ) {
-				$cmd = str_replace('wp ', 'php ' . WP_CLI_DIR . 'wp-cli.phar ', $cmd);
+			if ( 0 == strpos( $cmd, 'wp ' ) ) {
+				$cmd = str_replace( 'wp ', 'php ' . WP_CLI_DIR . 'wp-cli.phar ', $cmd );
 			}
 
 			if ( function_exists( 'shell_exec' ) ) {
@@ -119,27 +134,34 @@ if ( ! class_exists( 'WP_CLI_Loader' ) ) :
 			} else {
 				$output = 'Error: shell_exec not available';
 			}
-			
-			if( ! empty( $output ) ) {
+
+			if ( ! empty( $output ) ) {
 				$response['status'] = true;
 				$response['result'] = '<pre>' . $output . '</pre>';
 			}
-			
+
 			wp_send_json( $response );
 		}
 
 		/**
 		 * Add WP CLI button
+		 *
+		 * @since 1.0.0
+		 * @return void
 		 */
 		function wp_cli_admin_link() {
 			global $wp_admin_bar;
 
-			if ( !is_super_admin() || !is_admin_bar_showing() ) {
+			if ( ! is_super_admin() || ! is_admin_bar_showing() || ! is_admin() ) {
 				return;
 			}
 
 			/* Add the main siteadmin menu item */
-			$wp_admin_bar->add_menu( array( 'id' => 'wp_cli_link', 'title' => __( 'WP CLI', 'wp-cli' ), 'href' => '#' ) );
+			$wp_admin_bar->add_menu( array(
+				'id' => 'wp_cli_link',
+				'title' => __( 'WP CLI', 'wp-cli' ),
+				'href' => '#',
+			) );
 		}
 	}
 

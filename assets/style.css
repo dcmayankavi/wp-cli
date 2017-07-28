@@ -44,7 +44,8 @@
 }
 
 .wp-cli-console-title-wrap > span {
-    display: inline-block;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .wp-cli-console .wp-cli-cmd-input:focus {
@@ -54,8 +55,7 @@
 }
 
 .wp-cli-console-title-wrap {
-	padding: .2em .5em .3em;
-	opacity: 0.9;
+	padding: .2em .5em .5em;
 }
 
 .wp-cli-console-output {
@@ -87,14 +87,15 @@
 
 #wp-cli-drag-bar {
 	width: 100%;
-	height: 3px;
+	height: 2px;
 	cursor: row-resize;
+	opacity: 0.5;
 }
 
 #wp-cli-ghost-bar {
-    height: 3px;
+    height: 2px;
     background-color: #000;
-    opacity: 0.5;
+    opacity: 0.3;
     position: absolute;
     cursor: row-resize;
     z-index: 9999;
