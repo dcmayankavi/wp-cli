@@ -1,21 +1,22 @@
 .wp-cli-console {
-	background: #f1f1f1;
 	z-index: 9999;
 	position: fixed;
 	bottom: 0;
-	width: calc(100% - 160px);
+	width: calc(100% - 162px);
 	margin-left: 160px;
+	border-left: 1px solid;
+	border-right: 1px solid;
 }
 
 .folded .wp-cli-console {
 	margin-left:36px;
-	width: calc(100% - 36px);
+	width: calc(100% - 38px);
 }
 
 @media only screen and (max-width: 960px) {
 	.auto-fold .wp-cli-console {
 		margin-left:36px;
-		width: calc(100% - 36px);
+		width: calc(100% - 38px);
 	}	
 }
 
@@ -29,6 +30,7 @@
 .wp-cli-console .wp-cli-cmd-input {
 	width: 100%;
 	border-color: transparent;
+	background-color: rgba(255,255,255,.9);
 }
 
 .wp-cli-console-close {
@@ -38,7 +40,7 @@
 }
 
 .wp-cli-console-title {
-    width: calc(100% - 1em);
+    width: calc(100% - 16px);
 }
 
 .wp-cli-console-title-wrap > span {
@@ -52,19 +54,17 @@
 }
 
 .wp-cli-console-title-wrap {
-	background: #f2f2f2;
-	padding: .2em .5em;
-	font-weight: bold;
-	box-shadow: 0px 0px 2px 1px #afafaf;
+	padding: .2em .5em .3em;
+	opacity: 0.9;
 }
 
 .wp-cli-console-output {
 	min-height: 50px;
-	max-height: 100px;
+	height: 120px;
 	overflow: auto;
 }
 
-.wp-cli-console-output pre{
+.wp-cli-console-output pre {
 	margin: 0 auto;
 	padding: 0.25em .5em;
 }
@@ -83,4 +83,25 @@
 
 #wp-admin-bar-wp_cli_link {
 	cursor: pointer;
+}
+
+#wp-cli-drag-bar {
+	width: 100%;
+	height: 3px;
+	cursor: row-resize;
+}
+
+#wp-cli-ghost-bar {
+    height: 3px;
+    background-color: #000;
+    opacity: 0.5;
+    position: absolute;
+    cursor: row-resize;
+    z-index: 9999;
+}
+
+.wp-cli-command {
+    margin: 0 auto;
+    padding: 0.25em .5em;
+    font-weight: bold;
 }
