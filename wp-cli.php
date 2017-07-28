@@ -3,7 +3,7 @@
  * Plugin Name: WP CLI
  * Plugin URI: http://dineshchouhan.com
  * Description: Will provide wp-cli command action at backend.
- * Version: 0.0.1
+ * Version: 1.0.0
  * Author: Dinesh Chouhan
  * Author URI: http://dineshchouhan.com
  * Text Domain: wp-cli

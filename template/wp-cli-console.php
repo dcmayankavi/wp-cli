@@ -3,7 +3,7 @@
  * WP CLI Console template.
  *
  * @package wp-cli
- * @since 0.0.1
+ * @since 1.0.0
  */
 
 ?>

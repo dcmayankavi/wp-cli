@@ -50,7 +50,7 @@ if ( ! class_exists( 'WP_CLI_Loader' ) ) :
 		 */
 		public static function constants() {
 
-			define( 'WP_CLI_VER', '0.0.1' );
+			define( 'WP_CLI_VER', '1.0.0' );
 			define( 'WP_CLI_FILE', trailingslashit( dirname( dirname( __FILE__ ) ) ) . 'wp-cli.php' );
 			define( 'WP_CLI_DIR', plugin_dir_path( WP_CLI_FILE ) );
 			define( 'WP_CLI_URL', plugins_url( '/', WP_CLI_FILE ) );
@@ -96,7 +96,7 @@ if ( ! class_exists( 'WP_CLI_Loader' ) ) :
 		 */
 		function wp_cli_scripts() {
 			wp_enqueue_style( 'wp-cli-style', WP_CLI_URL . 'assets/style.css' );
-			wp_enqueue_script( 'wp-cli-script', WP_CLI_URL . 'assets/script.js', array( 'jquery' ), '0.0.1', true );
+			wp_enqueue_script( 'wp-cli-script', WP_CLI_URL . 'assets/script.js', array( 'jquery' ), WP_CLI_VER, true );
 		}
 
 		/**

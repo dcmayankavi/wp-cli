@@ -6,7 +6,7 @@
 		 * Initializes the services logic.
 		 *
 		 * @return void
-		 * @since 0.0.1
+		 * @since 1.0.0
 		 */
 		cmdStack: Array(),
 		cmdTravel: 0,
