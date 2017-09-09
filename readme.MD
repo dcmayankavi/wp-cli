@@ -6,6 +6,7 @@ Requires at least: 3
 Tested up to: 4.8.1
 
 WP CLI helps to worpdress developer to user all WP CLI commands from backend.
+<img src="https://i.imgur.com/7ESVNWE.png" />
 
 == Description ==
 
@@ -23,8 +24,8 @@ WP CLI provide us commands to handle complete wordpress site very easily and thi
 
 == Screenshots ==
 
-1. https://i.imgur.com/xGg6unT.png
-2. https://i.imgur.com/LWCQVdG.png
+<img src="https://i.imgur.com/xGg6unT.png" />
+<img src="https://i.imgur.com/LWCQVdG.png" />
 
 == Changelog ==
 
