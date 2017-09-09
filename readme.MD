@@ -24,6 +24,7 @@ WP CLI provide us commands to handle complete wordpress site very easily and thi
 == Screenshots ==
 
 1. https://i.imgur.com/xGg6unT.png
+2. https://i.imgur.com/LWCQVdG.png
 
 == Changelog ==
 
