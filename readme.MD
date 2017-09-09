@@ -1,8 +1,9 @@
 === WP CLI ===
+
 Contributors: dineshc
 Tags: wp-cli, cli, commands, wordpress-cli
 Requires at least: 3
-Tested up to: 4.8
+Tested up to: 4.8.1
 
 WP CLI helps to worpdress developer to user all WP CLI commands from backend.
 
@@ -22,7 +23,7 @@ WP CLI provide us commands to handle complete wordpress site very easily and thi
 
 == Screenshots ==
 
-1. Here you can see how you can quickly exicute wp-cli commands.
+1. https://i.imgur.com/xGg6unT.png
 
 == Changelog ==
 
