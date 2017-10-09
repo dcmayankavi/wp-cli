@@ -4,6 +4,8 @@ Contributors: dineshc
 Tags: wp-cli, cli, commands, wordpress-cli
 Requires at least: 3
 Tested up to: 4.8.1
+License: GPLv3
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 WP CLI helps to worpdress developer to user all WP CLI commands from backend.
 <img src="https://i.imgur.com/7ESVNWE.png" />
